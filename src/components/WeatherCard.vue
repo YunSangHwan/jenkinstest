@@ -67,13 +67,13 @@
         Full Report
       </v-btn>
     </v-card-actions>
+
+    <v-btn @click="history()">click</v-btn>
   </v-card>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import Component from 'vue-class-component';
-//import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 
 // const AppProps = Vue.extend({ 프롭스 데이터 타입 선언
 //   props: {
@@ -84,7 +84,6 @@ import Component from 'vue-class-component';
 @Component({
   name: 'WeatherCard',
 })
-
 export default class WeatherCardVue extends Vue {
   public labels: object = ['SU', 'MO', 'TU', 'WED', 'TH', 'FR', 'SA'];
   public time: number = 0;
@@ -101,14 +100,34 @@ export default class WeatherCardVue extends Vue {
     },
     { day: 'Thursday', icon: 'mdi-cloud', temp: '25\xB0/15\xB0' },
   ];
+  private latitude: any = '';
+  private longitude: any = '';
 
-  private test(): any {
-    console.log("테스트");
-    this.$store.dispatch('GET_WEATHER');
-  };
+  private async created(): Promise<void> {
+    console.log(navigator.geolocation)
+    if(navigator.geolocation){
+      await navigator.geolocation.getCurrentPosition( async (position) => {
+        console.log(position.coords.latitude)
+        console.log(position.coords.longitude)
+        await this.$store.dispatch('GET_WEATHER', {
+          latitude: position.coords.latitude, 
+          longitude: position.coords.longitude,
+        });
+      });
+    }
+  };   
 
-  created () { 
-    this.test()
-  };
+  private async history(): Promise<void>{
+    console.log(navigator.geolocation)
+    await navigator.geolocation.getCurrentPosition( async (position) => {
+      console.log(position.coords.latitude)
+      console.log(position.coords.longitude)
+      await this.$store.dispatch('GET_WEATHER_HISTORY', {
+        latitude: position.coords.latitude, 
+        longitude: position.coords.longitude,
+      });
+    });
+  }
+
 }
 </script>

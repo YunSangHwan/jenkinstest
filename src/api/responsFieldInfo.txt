@@ -1,0 +1,36 @@
+{
+  "message": "Count: 24",
+  "cod": "200",
+  "city_id": 4298960,   //도시 ID
+  "calctime": 0.00297316,
+  "cnt": 24,
+  "list": [
+  {
+  "dt": 1578384000,       //데이터 계산 시간, 유닉스 UTF
+  "main": {
+    "temp": 275.45,       //절대 온도
+    "feels_like": 271.7,  //체감 절대 온도
+    "pressure": 1014,     //대기압 hPa
+    "humidity": 74,       //습도 %
+    "temp_min": 274.26,   //최저 온도
+    "temp_max": 276.48    //최대 온도
+  },
+  "wind": {
+    "speed": 2.16,        //풍속 미터/초
+    "deg": 87             //풍향
+  },
+  "clouds": {
+    "all": 90             //흐림 %
+  },
+  "weather": [
+    {
+      "id": 501,          //날씨 상태 ID
+      "main": "Rain",     //날씨 매개 변수(Rain, Snow, Extreme   )
+      "description": "moderate rain", // 그룹내 기상 조건
+      "icon": "10n"       //날씨 아이콘
+    }
+  ],
+  "rain": {
+    "1h": 0.9
+  }
+},
