@@ -20,8 +20,6 @@ export default {
     //http://history.openweathermap.org/data/2.5/history/city?lat={lat}&lon={lon}&type=hour&start={start}&end={end}&appid={API key}
     const res = await axios.post(
       `http://history.openweathermap.org/data/2.5/history/city?lat=` + latitude + `&lon=` + longitude + `&type=hour&start=1604100000&end=1604228795&appid=452f91ea3d48b76403978bcf4bb153f2&units=metric`
-
-
     );
     return res;
   },
