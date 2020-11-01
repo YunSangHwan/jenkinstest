@@ -1,42 +1,51 @@
+export interface List {
+  dt: 0;
+  main: {
+    temp: 0;
+    feels_like: 0;
+    pressure: 0;
+    humidity: 0;
+    temp_min: 0;
+    temp_max: 0;
+  };
+  wind: {
+    speed: 0;
+    deg: 0;
+  };
+  clouds: {
+    all: 0;
+  };
+  weather: [
+    {
+      id: 0;
+      main: '';
+      description: '';
+      icon: '';
+    },
+  ];
+}
+export interface WeatherInfo {
+  message: '';
+  cod: '';
+  city_id: 0;
+  calctime: 0;
+  cnt: 0;
+  list: any;
+}
 
-// export interface TodoInfo {
-//   id: number;
-//   title: string;
-//   content: string;
-//   status: boolean;
-// }
 
 export interface State {
-  // todoList: TodoInfo[];
-  // todoInfo: TodoInfo;
+  weatherInfo: WeatherInfo;
 }
 
 const state: State = {
-  // todoList: [
-  //   { 
-  //     id: 1, 
-  //     title: '메뉴 설정',
-  //     content: '내용',
-  //     status: false,
-  //   },
-  //   {
-  //     id: 2,
-  //     title: '메뉴 설정22',
-  //     content: '내용',
-  //     status: false,
-  //   },
-  //   {
-  //     id: 3,
-  //     title: '메뉴 설정33',
-  //     content: '내용33',
-  //     status: false,
-  //   },
-  // ],
-  // todoInfo: {
-  //   id: 0,
-  //   title: '',
-  //   content: '',
-  //   status: false,
-  // },
+  weatherInfo: {
+    message: '',
+    cod: '',
+    city_id: 0,
+    calctime: 0,
+    cnt: 0,
+    list: [],
+  },
 };
 export default state;

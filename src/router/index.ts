@@ -1,16 +1,24 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
-import Weather from '../views/Weather.vue';
+import Weather from '@/views/Weather.vue';
+import Map from '@/views/Map.vue';
 
 Vue.use(VueRouter);
 
 const routes: RouteConfig[] = [
   {
-    path: '/',
+    path: '/test',
     name: 'Weather',
     components: {
       content: Weather,
     },
+  },
+  {
+    path: '/map',
+    name: 'Map',
+    components: {
+      content: Map,
+    }
   },
   // {
   //   path: '/about',
