@@ -36,7 +36,7 @@ const mutation: MutationTree<State> = {
 
   GET_HISTORY_WEATHER(state: State, payload: any): void {
     // console.log('과거의 날씨');
-    // console.log(payload.data.hourly)
+    console.log(payload.data.hourly)
     state.historyWeather = payload.data.hourly;
     state.historyWeather.map((data: any, index: number)=> {
       const label: string = common.dateFormatHM(data.dt);
@@ -51,7 +51,7 @@ const mutation: MutationTree<State> = {
 
     state.weatherInfo.main.temp = state.historyWeather[no].temp; //현재온도
     state.weatherInfo.main.humidity = state.historyWeather[no].humidity; //현재습도
-    state.weatherInfo.weather = new Array;
+    state.weatherInfo.weather = [];
     const weather = {
       main: '',
       description: '',

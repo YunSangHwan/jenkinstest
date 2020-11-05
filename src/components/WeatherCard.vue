@@ -1,7 +1,7 @@
 <template>
   <div>
     <template v-if="true">
-      <v-card class="mx-auto" max-width="1500">
+      <v-card class="mx-auto" max-width="1800">
         <v-list-item two-line>
           <v-list-item-content>
             <v-list-item-title class="headline">
@@ -43,7 +43,7 @@
         <!-- {{ticksLabels}} -->
         <v-slider
           v-model="time"
-          :max="19"
+          :max="23"
           :tick-labels="ticksLabels"
           class="mx-4"
           @click="choice()"
