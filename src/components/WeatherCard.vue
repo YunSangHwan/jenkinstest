@@ -1,6 +1,6 @@
 <template>
   <div>
-    <template v-if="true">
+    <template v-if="weatherInfo.name">
       <v-card class="mx-auto" max-width="1800">
         <v-list-item two-line>
           <v-list-item-content>
